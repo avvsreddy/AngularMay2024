@@ -1,0 +1,22 @@
+@if(categories.length===0){
+<div class="alert alert-danger" role="alert">
+  No Categories Found...!
+</div>
+}@else{
+<div class="container mt-5">
+    <h2>{{title}} - {{categories.length}}</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Loop through categories and create a card for each -->
+      @for (category of categories; track $index) {
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{category.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Category Id: {{category.id}}</h6>
+              <p class="card-text">{{category.description}}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>}

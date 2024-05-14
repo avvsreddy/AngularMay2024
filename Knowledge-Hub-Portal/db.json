@@ -1,0 +1,10 @@
+{"categories":
+[
+{"id":111,"title":"Education","description":"Good for school students"},
+{"id":222,"title":"Sports","description":"Good for school students"},
+{"id":333,"title":"Angular","description":"Good for developers"},
+{"id":444,"title":"Games","description":"Good for school students"},
+{"id":555,"title":".Net","description":"Good for school students"},
+{"id":666,"title":"Java","description":"Good for school students"},
+{"id":777,"title":"JavaScript","description":"Good for school students"}
+]}
