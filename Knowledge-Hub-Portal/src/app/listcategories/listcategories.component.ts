@@ -1,4 +1,4 @@
-import { CommonModule, NgTemplateOutlet,  } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe, LowerCasePipe, NgTemplateOutlet, UpperCasePipe,  } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../services/categories.service';
 import { Category } from '../models/category';
@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-listcategories',
   standalone: true,
-  imports: [CommonModule,NgTemplateOutlet,RouterLink],
+  imports: [CommonModule,NgTemplateOutlet,RouterLink,UpperCasePipe,LowerCasePipe,DatePipe,CurrencyPipe],
   templateUrl: './listcategories.component.html',
   styleUrl: './listcategories.component.css'
 })

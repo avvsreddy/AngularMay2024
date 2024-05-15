@@ -12,7 +12,7 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">{{category.title}}</h5>
+              <h5 class="card-title">{{category.title | uppercase}}</h5>
               <h6 class="card-subtitle mb-2 text-muted">Category Id: {{category.id}}</h6>
               <p class="card-text">{{category.description}}</p>
               <a [routerLink]="['/category/edit',category.id]" class="btn btn-primary m-2 ">Edit</a>
