@@ -1,1 +1,22 @@
-<p>categoryedit works!</p>
+<div class="container mt-5">
+    <h2>Edit Category</h2>
+   
+    <form #categoryForm="ngForm" (ngSubmit)="submited()">
+      <div class="mb-3">
+        <label for="categoryId" class="form-label">Category Id</label>
+        <input type="text" disabled class="form-control" id="categoryId" name="categoryId" placeholder="Enter Category Id" [(ngModel)] ='category.id' ngModel required>
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input [class.is-invalid]="categoryForm.invalid && categoryForm.touched" type="text" class="form-control" id="title" name="title" placeholder="Enter Title" [(ngModel)] ='category.title' ngModel required>
+        @if(categoryForm.invalid && categoryForm.touched){
+        <small>Title is mandatory</small>}
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter Description" [(ngModel)] ='category.description' ngModel></textarea>
+      </div>
+      <button type="submit" [disabled]="categoryForm.invalid" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+

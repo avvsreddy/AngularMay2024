@@ -6,6 +6,12 @@ import { Category } from '../models/category';
   providedIn: 'root'
 })
 export class CategoriesService {
+  editCategory(category: Category) {
+    return this.http.put(this.apiUrl+'/'+category.id,category);
+  }
+  getCategoryById(categoryIdToEdit: number) {
+    return this.http.get<Category>(this.apiUrl +'/'+categoryIdToEdit)
+  }
 
   constructor(private http:HttpClient) { }
   apiUrl:string="http://localhost:3000/categories"
@@ -61,5 +67,7 @@ createCategory(category:Category)
   return this.http.post(this.apiUrl,category);
 }
 
-
+deleteCategory(id:number){
+  return this.http.delete(this.apiUrl+'/'+id);
+}
 }

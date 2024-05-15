@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './listcategories.component.css'
 })
 export class ListcategoriesComponent implements OnInit {
+
 ngOnInit(): void {
   
 //const service = new CategoriesService();
@@ -26,6 +27,16 @@ constructor(private service:CategoriesService){}
 title:string="List of Categories";
 categories:Category[]=[];   //[{id:111,title:'title',description:'desc'}];
 
-
+onDelete(id: number) {
+  if(window.confirm('Are you sure to delete the category? '))
+    {
+      this.service.deleteCategory(id).subscribe(res => {
+        alert('Successfully deleted')
+      this.service.getCategories().subscribe((res => {
+        this.categories = res;
+      }));
+    });
+    }
+  }
 
 }

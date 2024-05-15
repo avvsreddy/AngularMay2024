@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { CategoryeditComponent } from './categoryedit/categoryedit.component';
 import { CategorydeleteComponent } from './categorydelete/categorydelete.component';
+import { UserregistrationComponent } from './userregistration/userregistration.component';
+import { canDeactivateFunctionGuard } from './routeguards/testRouteGurads';
 
 
 export const routes: Routes = 
@@ -30,10 +32,14 @@ title:'Knowledge Hub Portal - Category List'
     title:'Knowledge Hub Portal - Category Create'
 },
 {
-    path:'category/edit', component:CategoryeditComponent
+    path:'category/edit/:id', component:CategoryeditComponent
 },
 {
-path:'category/delete',component:CategorydeleteComponent
+path:'category/delete/:id',component:CategorydeleteComponent
+},
+
+{
+    path:'user/register', component:UserregistrationComponent, canDeactivate:[canDeactivateFunctionGuard]
 },
 {
     path:'**',
