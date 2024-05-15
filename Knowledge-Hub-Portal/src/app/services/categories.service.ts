@@ -8,15 +8,17 @@ import { Category } from '../models/category';
 export class CategoriesService {
 
   constructor(private http:HttpClient) { }
-
+  apiUrl:string="http://localhost:3000/categories"
 getCategories()
+
+
 {
 
 // fetch from API
-const apiUrl="http://localhost:3000/categories"
+
 //const http = new HttpClient();
 
-return this.http.get<Category[]>(apiUrl)
+return this.http.get<Category[]>(this.apiUrl)
 
 //   const categories = 
 //   [
@@ -53,5 +55,11 @@ return this.http.get<Category[]>(apiUrl)
 // ];
 // return categories;
 }
+
+createCategory(category:Category)
+{
+  return this.http.post(this.apiUrl,category);
+}
+
 
 }
